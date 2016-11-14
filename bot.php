@@ -22,7 +22,6 @@ if (!is_null($events['events'])) {
 			];
 			$template = [
 				'type' => 'buttons',
-				'thumbnailImageUrl' => 'https://assets.ifttt.com/images/channels/8/icons/large.png',
 				'title' => 'Menu',
 				'text' => 'Please select',
 				'actions' => [$action],
@@ -59,4 +58,4 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "OK1";
+echo "OK2";
