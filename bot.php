@@ -58,7 +58,7 @@ if (!is_null($events['events'])) {
 					'area' => $area,
 				];
 				$actionTwo =[
-					'type' => 'text',
+					'type' => 'message',
 					'text' => 'Click To WebSite',
 					'area' => $areaTwo,
 					];
