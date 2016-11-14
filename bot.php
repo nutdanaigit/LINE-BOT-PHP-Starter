@@ -24,8 +24,8 @@ if (!is_null($events['events'])) {
 			$area = [
 				'x' => '0',
 				'y' => '0',
-				'width' => '520',
-				'height' => '1040',
+				'width' => '300',
+				'height' => '300',
  			];
 			
 			$action = [
@@ -46,8 +46,8 @@ if (!is_null($events['events'])) {
 // 			];
 			
 			$baseSize = [
-				'height' => '1040',
-				'width' => '1040',
+				'height' => '300',
+				'width' => '300',
 			];
 			
 			$template = [
@@ -61,7 +61,7 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			$messages = [
 				'type' => 'imagemap',
-				'baseUrl' => 'https://assets.ifttt.com/images/channels/8/icons/large.png',
+				'baseUrl' => 'https://lh5.ggpht.com/6fsYoieU-wz4dlDLbRcfxREKEMy2fkgferOYUks2JjdAPDio4h7TmLG87pYYvJse5g=w300',
 				'altText' => 'this is a buttons template',
 				'baseSize' => $baseSize,
 				'actions' => [$action],
