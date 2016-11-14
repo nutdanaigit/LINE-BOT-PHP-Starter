@@ -1,5 +1,5 @@
 <?php
-$access_token = 'XXXXXXXXXXXXXXXXXXXXXXX';
+$access_token = 'uJp+tDv/gAwRGmrb+xNTujrPMzJSHr7Q1zZbofzQrKjMSEb0x6hnkjjw+c3qcfUE6ry3lSUyh62EMG3RBCbYL45p07SXa4fhRH0qSumj69nX77mRG/cxLwRe1t1v3Xy5NbYSGiyf1h/hPp+BOtjGggdB04t89/1O/w1cDnyilFU=';
 
 // Get POST body content
 $content = file_get_contents('php://input');
@@ -15,11 +15,29 @@ if (!is_null($events['events'])) {
 			$text = $event['message']['text'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
+			$area = [
+				'x' => '0',
+				'y' => '0',
+				'width' => '520',
+				'height' => '1040',
+ 			];
+			$baseSize = [
+				'height' => '1040'
+				'width' => '1040'
+			];
+			$action = [
+				'type' => 'uri',
+				'linkUri' => 'http://www.google.com',
+				'area' => $area,
+			];
 
 			// Build message to reply back
 			$messages = [
-				'type' => 'text',
-				'text' => $text
+				'type' => 'imagemap',
+				'baseUrl' => 'https://assets.ifttt.com/images/channels/8/icons/large.png',
+				'altText' => 'this is a buttons template',
+				'baseSize' => $baseSize,
+				'actions' => [$action],
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
@@ -44,4 +62,4 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "OK";
+echo "OK3";
