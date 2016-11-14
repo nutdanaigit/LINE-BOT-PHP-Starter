@@ -6,8 +6,10 @@ $content = file_get_contents('php://input');
 // Parse JSON
 $events = json_decode($content, true);
 
-$arrayInformation = array('web','Web','information','Information','ขอข้อมูล','ข้อมูล','สอบถามข้อมูลเพิ่มเติม');
-$arrayPhone = array('May i have numberphone please?','phone','Phone','phone please','Phone Please','เบอร์','ขอเบอร์','ขอเบอร์หน่อย','ติดต่อพนักงาน','โทร','หมายเลข','เบอร์โทร','ขอเบอร์โทร','ขอเบอร์โทรครับ','ขอบเบอร์โทรค่ะ','เบอร์โทรครับ');
+$arrayWebInformation = array('1','web','Web','เว็บ','เว็บไซต์');
+$arrayPhone = array('2','May i have numberphone please?','phone','Phone','phone please','Phone Please','เบอร์','ขอเบอร์','ขอเบอร์หน่อย','ติดต่อพนักงาน','โทร','หมายเลข','เบอร์โทร','ขอเบอร์โทร','ขอเบอร์โทรครับ','ขอบเบอร์โทรค่ะ','เบอร์โทรครับ');
+$arrayInformation = array('Information','information','ขอข้อมูล','ข้อมูล','สอบถามข้อมูลเพิ่มเติม','รายละเอียด','#');
+
 
 // Validate parsed JSON data
 if (!is_null($events['events'])) {
@@ -36,7 +38,7 @@ if (!is_null($events['events'])) {
 					'altText' => 'this is a confirm template',
 					'template' => $template,
 				];
-			}else if(in_array($event['message']['text'] ,$arrayInformation)){
+			}else if(in_array($event['message']['text'] ,$arrayWebInformation)){
 				$area = [
 					'x' => 0,
 					'y' => 0,
@@ -59,29 +61,19 @@ if (!is_null($events['events'])) {
 					'altText' => 'this is a buttons template',
 					'baseSize' => $baseSize,
 					'actions' => [$action],
-
-	// 				'template' => $template,
-	// 				'packageId' => '1',
-	// 				'stickerId' => '1',
-	
+				];
+			}else if(in_array($event['message']['text'] ,$arrayInformation)){
+				$messages = [
+					'type' => 'text',
+					'text' => ' พิมพ์ 1 หรือ web หรือ เว็บ เพื่อเข้าดูข้อมูลที่เว็ปไซต์ค่ะ <br> พิมพ์ 2 หรือ phone หรือ เบอร์ เพื่อโทรออกค่ะ '
 				];
 			}else{
 				$messages = [
 					'type' => 'text',
-					'text' => 'ขออภัยครับ ท่านใส่รายการไม่ถูกต้อง T T'
+					'text' => 'ขออภัยครับ ท่านใส่รายการไม่ถูกต้อง T T <br> กรุณาพิมพ์ /"#/" หรือ /"รายละเอียด/" เพื่อดูรายการค่ะ '
 				];
 			}
-			
-// 			$action = [
-// 				'type' => 'message',
-// 				'label' => 'No',
-// 				'text' => 'no',
-// 			];
-// 			$action2 = [
-// 				'type' => 'message',
-// 				'label' => 'Yes',
-// 				'text' => 'yes',
-// 			];
+
 
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
@@ -106,4 +98,4 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "OK47";
+echo "OK437";
