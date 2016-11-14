@@ -18,8 +18,10 @@ if (!is_null($events['events'])) {
 
 			// Build message to reply back
 			$messages = [
-				'type' => 'text',
-				'text' => $text
+// 				'type' => 'text',
+// 				'text' => $text
+				'type' => 'tmemplate'
+		
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
