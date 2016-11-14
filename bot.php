@@ -51,8 +51,8 @@ if (!is_null($events['events'])) {
 					'area' => $area,
 				];
 				$baseSize = [
-					'height' => 460,
-					'width' => 460,
+					'height' => 500,
+					'width' => 500,
 				];
 				// Build message to reply back
 				$messages = [
@@ -65,12 +65,14 @@ if (!is_null($events['events'])) {
 			}else if(in_array($event['message']['text'] ,$arrayInformation)){
 				$messages = [
 					'type' => 'text',
-					'text' => ' พิมพ์ 1 หรือ web หรือ เว็บ เพื่อเข้าดูข้อมูลที่เว็ปไซต์ค่ะ <br> พิมพ์ 2 หรือ phone หรือ เบอร์ เพื่อโทรออกค่ะ '
+					'text' => ' พิมพ์ 1 หรือ web หรือ เว็บ เพื่อเข้าดูข้อมูลที่เว็ปไซต์ค่ะ  
+					พิมพ์ 2 หรือ phone หรือ เบอร์ เพื่อโทรออกค่ะ '
 				];
 			}else{
 				$messages = [
 					'type' => 'text',
-					'text' => 'ขออภัยครับ ท่านใส่รายการไม่ถูกต้อง T T <br> กรุณาพิมพ์ /"#/" หรือ /"รายละเอียด/" เพื่อดูรายการค่ะ '
+					'text' => 'ขออภัยครับ ท่านใส่รายการไม่ถูกต้อง T T  
+					กรุณาพิมพ์ "#" หรือ "รายละเอียด" เพื่อดูรายการค่ะ '
 				];
 			}
 
@@ -98,4 +100,4 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "OK437";
+echo "OK4887";
