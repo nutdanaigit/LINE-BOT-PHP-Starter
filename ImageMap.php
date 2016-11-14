@@ -15,21 +15,21 @@ if (!is_null($events['events'])) {
 			$text = $event['message']['text'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
-// 			$area = [
-// 				'x' => 0,
-// 				'y' => 0,
-// 				'width' => 520,
-// 				'height' => 1040,
-//  			];
-// 			$baseSize = [
-// 				'height' => 1040
-// 				'width' => 1040
-// 			];
-// 			$action = [
-// 				'type' => 'uri',
-// 				'linkUri' => 'http://www.google.com',
-// 				'area' => $area,
-// 			];
+			$area = [
+				'x' => 0,
+				'y' => 0,
+				'width' => 520,
+				'height' => 1040,
+ 			];
+			$baseSize = [
+				'height' => 1040,
+				'width' => 1040,
+			];
+			$action = [
+				'type' => 'uri',
+				'linkUri' => 'http://www.google.com',
+				'area' => $area,
+			];
 
 			// Build message to reply back
 // 			$messages = [
@@ -66,4 +66,4 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "OK73";
+echo "OK733";
