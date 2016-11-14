@@ -25,7 +25,7 @@ if (!is_null($events['events'])) {
 				'thumbnailImageUrl' => 'https://assets.ifttt.com/images/channels/8/icons/large.png',
 				'title' => 'Menu',
 				'text' => 'Please select',
-				'actions' => $action
+				'actions' => [$action]
 			];
 			
 			
