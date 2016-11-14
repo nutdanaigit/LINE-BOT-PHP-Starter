@@ -61,7 +61,7 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			$messages = [
 				'type' => 'imagemap',
-				'baseUrl' => 'https://github.com/nutdanaigit/LINE-BOT-PHP-Starter/blob/master',
+				'baseUrl' => 'https://raw.githubusercontent.com/nutdanaigit/LINE-BOT-PHP-Starter/master',
 				'altText' => 'this is a buttons template',
 				'baseSize' => $baseSize,
 				'actions' => [$action],
