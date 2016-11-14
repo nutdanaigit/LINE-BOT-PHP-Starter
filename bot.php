@@ -51,8 +51,8 @@ if (!is_null($events['events'])) {
 					'area' => $area,
 				];
 				$baseSize = [
-					'height' => 100,
-					'width' => 240,
+					'height' => 300,
+					'width' => 300,
 				];
 				// Build message to reply back
 				$messages = [
