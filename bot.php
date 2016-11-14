@@ -42,15 +42,15 @@ if (!is_null($events['events'])) {
 				$area = [
 					'x' => 0,
 					'y' => 0,
-					'width' => 520,
-					'height' => 1040,
+					'width' => 460,
+					'height' => 300,
  				];
 				
 				$areaTwo = [
-					'x' => 520,
+					'x' => 460,
 					'y' => 0,
-					'width' => 520,
-					'height' => 1040,
+					'width' => 460,
+					'height' => 300,
  				];
 				$action = [
 					'type' => 'uri',
@@ -63,8 +63,8 @@ if (!is_null($events['events'])) {
 					'area' => $areaTwo,
 					];
 				$baseSize = [
-					'height' => 1040,
-					'width' => 520,
+					'height' => 460,
+					'width' => 460,
 				];
 				// Build message to reply back
 				$messages = [
