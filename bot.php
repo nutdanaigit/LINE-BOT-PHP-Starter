@@ -10,6 +10,43 @@ $arrayWebInformation = array('1','web','Web','เว็บ','เว็บไซ�
 $arrayPhone = array('2','May i have numberphone please?','phone','Phone','phone please','Phone Please','เบอร์','ขอเบอร์','ขอเบอร์หน่อย','ติดต่อพนักงาน','โทร','หมายเลข','เบอร์โทร','ขอเบอร์โทร','ขอเบอร์โทรครับ','ขอบเบอร์โทรค่ะ','เบอร์โทรครับ');
 $arrayInformation = array('Information','information','ขอข้อมูล','ข้อมูล','สอบถามข้อมูลเพิ่มเติม','รายละเอียด','#');
 
+function ImageMap(){
+				$area = [
+					'x' => 0,
+					'y' => 0,
+					'width' => 460,
+					'height' => 300,
+ 				];
+				
+				$areaTwo = [
+					'x' => 0,
+					'y' => 300,
+					'width' => 460,
+					'height' => 100,
+ 				];
+				$action = [
+					'type' => 'uri',
+					'linkUri' => 'http://scbhelp.mybluemix.net',
+					'area' => $area,
+				];
+				$actionTwo =[
+					'type' => 'message',
+					'text' => 'Click To WebSite',
+					'area' => $areaTwo,
+					];
+				$baseSize = [
+					'height' => 460,
+					'width' => 460,
+				];
+				// Build message to reply back
+				$messages = [
+					'type' => 'imagemap',
+					'baseUrl' => 'https://raw.githubusercontent.com/nutdanaigit/LINE-BOT-PHP-Starter/master',
+					'altText' => 'this is a buttons template',
+					'baseSize' => $baseSize,
+					'actions' => [$action,$actionTwo],
+				];
+}
 
 // Validate parsed JSON data
 if (!is_null($events['events'])) {
@@ -81,43 +118,5 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "OK8";
-function ImageMap(){
-				$area = [
-					'x' => 0,
-					'y' => 0,
-					'width' => 460,
-					'height' => 300,
- 				];
-				
-				$areaTwo = [
-					'x' => 0,
-					'y' => 300,
-					'width' => 460,
-					'height' => 100,
- 				];
-				$action = [
-					'type' => 'uri',
-					'linkUri' => 'http://scbhelp.mybluemix.net',
-					'area' => $area,
-				];
-				$actionTwo =[
-					'type' => 'message',
-					'text' => 'Click To WebSite',
-					'area' => $areaTwo,
-					];
-				$baseSize = [
-					'height' => 460,
-					'width' => 460,
-				];
-				// Build message to reply back
-				$messages = [
-					'type' => 'imagemap',
-					'baseUrl' => 'https://raw.githubusercontent.com/nutdanaigit/LINE-BOT-PHP-Starter/master',
-					'altText' => 'this is a buttons template',
-					'baseSize' => $baseSize,
-					'actions' => [$action,$actionTwo],
-				];
-}
-
+echo "OK822";
 ?>
