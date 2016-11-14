@@ -30,7 +30,7 @@ if (!is_null($events['events'])) {
 			
 			$action = [
 				'type' => 'uri',
-				'linkUri' => 'tel:027777777%2C0%2C%2C%23%2C2%2C1%2C2',
+				'linkUri' => 'http://scbhelp.mybluemix.net',
 				'area' => $area,
 			];
 			
@@ -46,8 +46,8 @@ if (!is_null($events['events'])) {
 // 			];
 			
 			$baseSize = [
-				'height' => '300',
-				'width' => '300',
+				'height' => '500',
+				'width' => '500',
 			];
 			
 			$template = [
@@ -94,4 +94,4 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "OK325";
+echo "OK3245";
