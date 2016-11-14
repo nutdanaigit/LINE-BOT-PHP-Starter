@@ -30,7 +30,7 @@ if (!is_null($events['events'])) {
 			
 			$action = [
 				'type' => 'uri',
-				'linkUri' => 'http://www.google.com',
+				'linkUri' => 'tel:027777777%2C0%2C%2C%23%2C2%2C1%2C2:,
 				'area' => $area,
 			];
 			
@@ -94,4 +94,4 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "OK25";
+echo "OK325";
