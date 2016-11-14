@@ -16,14 +16,14 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 			$area = [
-				'x' => '0',
-				'y' => '0',
-				'width' => '520',
-				'height' => '1040',
+				'x' => 0,
+				'y' => 0,
+				'width' => 520,
+				'height' => 1040,
  			];
 			$baseSize = [
-				'height' => '1040'
-				'width' => '1040'
+				'height' => 1040
+				'width' => 1040
 			];
 			$action = [
 				'type' => 'uri',
@@ -62,4 +62,4 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "OK3";
+echo "OK73";
