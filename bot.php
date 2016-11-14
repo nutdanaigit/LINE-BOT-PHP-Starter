@@ -15,10 +15,16 @@ if (!is_null($events['events'])) {
 			$text = $event['message']['text'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
+// 			$action = [
+// 				'type' => 'uri',
+// 				'label' => 'View detail',
+// 				'uri' => 'tel:027777777,0,,#,2,1,2',
+// 			];
+			
 			$action = [
-				'type' => 'uri',
-				'label' => 'View detail',
-				'uri' => 'tel:027777777,0,,#,2,1,2',
+				'type' => 'message',
+				'label' => 'No',
+				'text' => 'no',
 			];
 			$action2 = [
 				'type' => 'message',
@@ -34,11 +40,11 @@ if (!is_null($events['events'])) {
 			
 			// Build message to reply back
 			$messages = [
-				'type' => 'sticker',
-// 				'altText' => 'this is a buttons template',
-// 				'template' => $template,
-				'packageId' => '1',
-				'stickerId' => '1',
+				'type' => 'template',
+				'altText' => 'this is a buttons template',
+				'template' => $template,
+// 				'packageId' => '1',
+// 				'stickerId' => '1',
 	
 			];
 
@@ -64,4 +70,4 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "OK4";
+echo "OK44";
