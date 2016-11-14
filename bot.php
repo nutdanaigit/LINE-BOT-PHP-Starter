@@ -20,11 +20,15 @@ if (!is_null($events['events'])) {
 				'label' => 'View detail',
 				'uri' => 'tel:027777777,0,,#,2,1,2',
 			];
+			$action2 = [
+				'type' => 'message',
+				'label' => 'Yes',
+				'text' => 'yes',
+			];
 			$template = [
-				'type' => 'buttons',
-				'title' => 'Menu',
+				'type' => 'confirm',
 				'text' => 'Please select',
-				'actions' => [$action],
+				'actions' => [$action,$action2],
 			];
 			
 			
@@ -58,4 +62,4 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "OK3";
+echo "OK4";
