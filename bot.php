@@ -46,8 +46,8 @@ if (!is_null($events['events'])) {
 // 			];
 			
 			$baseSize = [
-				'height' => '1040'
-				'width' => '1040'
+				'height' => '1040',
+				'width' => '1040',
 			];
 			
 			$template = [
