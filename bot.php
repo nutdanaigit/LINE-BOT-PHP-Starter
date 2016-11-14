@@ -24,8 +24,8 @@ if (!is_null($events['events'])) {
 			$area = [
 				'x' => 0,
 				'y' => 0,
-				'width' => 300,
-				'height' => 300,
+				'width' => 460,
+				'height' => 460,
  			];
 			
 			$action = [
@@ -46,8 +46,8 @@ if (!is_null($events['events'])) {
 // 			];
 			
 			$baseSize = [
-				'height' => 300,
-				'width' => 300,
+				'height' => 460,
+				'width' => 460,
 			];
 			
 			$template = [
