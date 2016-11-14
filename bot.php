@@ -7,7 +7,7 @@ $content = file_get_contents('php://input');
 $events = json_decode($content, true);
 
 $arrayInformation = array('web','Web','information','Information','ขอข้อมูล','ข้อมูล','สอบถามขอมูลเพิ่มเติม');
-$arrayPhone = array('May i have numberphone please?','phone','Phone','phone please','Phone Please','เบอร์','ขอเบอร์','ขอเบอร์หน่อย','ติดต่อพนักงาน','โทร','หมายเลข','เบอร์โทร','ขอเบอร์โทร','ขอเบอร์โทรครับ','ขอบเบอร์โทรค่ะ','เบอร์โทรครับ')
+$arrayPhone = array('May i have numberphone please?','phone','Phone','phone please','Phone Please','เบอร์','ขอเบอร์','ขอเบอร์หน่อย','ติดต่อพนักงาน','โทร','หมายเลข','เบอร์โทร','ขอเบอร์โทร','ขอเบอร์โทรครับ','ขอบเบอร์โทรค่ะ','เบอร์โทรครับ');
 
 // Validate parsed JSON data
 if (!is_null($events['events'])) {
