@@ -9,6 +9,7 @@ $events = json_decode($content, true);
 $arrayWebInformation = array('1','web','Web','เว็บ','เว็บไซต์');
 $arrayPhone = array('2','May i have numberphone please?','phone','Phone','phone please','Phone Please','เบอร์','ขอเบอร์','ขอเบอร์หน่อย','ติดต่อพนักงาน','โทร','หมายเลข','เบอร์โทร','ขอเบอร์โทร','ขอเบอร์โทรครับ','ขอบเบอร์โทรค่ะ','เบอร์โทรครับ');
 $arrayInformation = array('Information','information','ขอข้อมูล','ข้อมูล','สอบถามข้อมูลเพิ่มเติม','รายละเอียด','#');
+$a = 'Click To WebSite';
 
 	function imageMap(){
 				
@@ -61,7 +62,7 @@ if (!is_null($events['events'])) {
 					'area' => $area,
 				];
 				$actionTwo =[
-					'type' => 'text',
+					'type' => 'message',
 					'text' => 'Click To WebSite',
 					'area' => $areaTwo,
 					];
@@ -78,14 +79,14 @@ if (!is_null($events['events'])) {
 					'actions' => [$action,$actionTwo],
 				];
 				
-			}else if(in_array($event['message']['text'] ,$arrayInformation)){
+			}else if(($event['message']['text'] ,$arrayInformation)){
 				$messages = [
 					'type' => 'text',
 					'text' => ' รายการ
 --> พิมพ์ 1 หรือ web หรือ เว็บ เพื่อเข้าดูข้อมูลที่เว็ปไซต์ค่ะ  
 --> พิมพ์ 2 หรือ phone หรือ เบอร์ เพื่อโทรออกค่ะ '
 				];
-			}else if(in_array($event['message']['text'],'Click To WebSite' )){
+			}else if(in_array($event['message']['text'], $a )){
 				// Do in the future.
 			}else{
 				$messages = [
@@ -119,5 +120,5 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "OK82";
+echo "OK822";
 ?>
