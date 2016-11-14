@@ -39,6 +39,50 @@ if (!is_null($events['events'])) {
 					'template' => $template,
 				];
 			}else if(in_array($event['message']['text'] ,$arrayWebInformation)){
+				ImageMap();
+			}else if(in_array($event['message']['text'] ,$arrayInformation)){
+				$messages = [
+					'type' => 'text',
+					'text' => ' รายการ
+--> พิมพ์ 1 หรือ web หรือ เว็บ เพื่อเข้าดูข้อมูลที่เว็ปไซต์ค่ะ  
+--> พิมพ์ 2 หรือ phone หรือ เบอร์ เพื่อโทรออกค่ะ '
+				];
+			}else if(in_array($event['message']['text'],'Click To WebSite' )){
+				ImageMap();
+			}else{
+				$messages = [
+					'type' => 'text',
+					'text' => 'ขออภัยครับ ท่านใส่รายการไม่ถูกต้อง T T  
+--> กรุณาพิมพ์ "#" หรือ "รายละเอียด" เพื่อดูรายการค่ะ '
+				];
+			}
+
+
+			// Make a POST Request to Messaging API to reply to sender
+			$url = 'https://api.line.me/v2/bot/message/reply';
+			$data = [
+				'replyToken' => $replyToken,
+				'messages' => [$messages],
+			];
+			$post = json_encode($data);
+			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+
+			$ch = curl_init($url);
+			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+			$result = curl_exec($ch);
+			curl_close($ch);
+
+			echo $result . "\r\n";
+			
+		}
+	}
+}
+echo "OK8";
+function ImageMap(){
 				$area = [
 					'x' => 0,
 					'y' => 0,
@@ -74,43 +118,6 @@ if (!is_null($events['events'])) {
 					'baseSize' => $baseSize,
 					'actions' => [$action,$actionTwo],
 				];
-			}else if(in_array($event['message']['text'] ,$arrayInformation)){
-				$messages = [
-					'type' => 'text',
-					'text' => ' รายการ
---> พิมพ์ 1 หรือ web หรือ เว็บ เพื่อเข้าดูข้อมูลที่เว็ปไซต์ค่ะ  
---> พิมพ์ 2 หรือ phone หรือ เบอร์ เพื่อโทรออกค่ะ '
-				];
-			}else{
-				$messages = [
-					'type' => 'text',
-					'text' => 'ขออภัยครับ ท่านใส่รายการไม่ถูกต้อง T T  
---> กรุณาพิมพ์ "#" หรือ "รายละเอียด" เพื่อดูรายการค่ะ '
-				];
-			}
-
-
-			// Make a POST Request to Messaging API to reply to sender
-			$url = 'https://api.line.me/v2/bot/message/reply';
-			$data = [
-				'replyToken' => $replyToken,
-				'messages' => [$messages],
-			];
-			$post = json_encode($data);
-			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
-
-			$ch = curl_init($url);
-			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-			curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-			$result = curl_exec($ch);
-			curl_close($ch);
-
-			echo $result . "\r\n";
-			
-		}
-	}
 }
-echo "OK847";
+
+?>
