@@ -18,7 +18,7 @@ if (!is_null($events['events'])) {
 			$action = [
 				'type' => 'uri',
 				'label' => 'View detail',
-				'uri' => 'tel:027777777,0,,#,2,1,2',
+				'uri' => 'http://www.google.com',
 			];
 			
 // 			$action = [
