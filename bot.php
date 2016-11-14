@@ -17,8 +17,8 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 			$action = [
 				'type' => 'uri',
-				'label' => 'View detail',
-				'uri' => 'tel:027777777',
+				'label' => 'Call',
+				'uri' => 'tel:027777777%2C0%2C%2C%23%2C2%2C1%2C2',
 			];
 			
 // 			$action = [
