@@ -42,7 +42,14 @@ if (!is_null($events['events'])) {
 				$area = [
 					'x' => 0,
 					'y' => 0,
-					'width' => 1040,
+					'width' => 520,
+					'height' => 1040,
+ 				];
+				
+				$areaTwo = [
+					'x' => 520,
+					'y' => 0,
+					'width' => 520,
 					'height' => 1040,
  				];
 				$action = [
@@ -50,6 +57,11 @@ if (!is_null($events['events'])) {
 					'linkUri' => 'http://scbhelp.mybluemix.net',
 					'area' => $area,
 				];
+				$actionTwo =[
+					'type' => 'message',
+					'text' => 'Click To WebSite',
+					'area' => $areaTwo,
+					];
 				$baseSize = [
 					'height' => 1040,
 					'width' => 1040,
@@ -60,7 +72,7 @@ if (!is_null($events['events'])) {
 					'baseUrl' => 'https://raw.githubusercontent.com/nutdanaigit/LINE-BOT-PHP-Starter/master',
 					'altText' => 'this is a buttons template',
 					'baseSize' => $baseSize,
-					'actions' => [$action],
+					'actions' => [$action,$actionTwo],
 				];
 			}else if(in_array($event['message']['text'] ,$arrayInformation)){
 				$messages = [
