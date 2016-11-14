@@ -15,10 +15,23 @@ if (!is_null($events['events'])) {
 			$text = $event['message']['text'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
+// 			$action = [
+// 				'type' => 'uri',
+// 				'label' => 'Call',
+// 				'uri' => 'tel:027777777%2C0%2C%2C%23%2C2%2C1%2C2',
+// 			];
+			
+			$area = [
+				'x' => '0',
+				'y' => '0',
+				'width' => '520',
+				'height' => '1040',
+ 			];
+			
 			$action = [
 				'type' => 'uri',
-				'label' => 'Call',
-				'uri' => 'tel:027777777%2C0%2C%2C%23%2C2%2C1%2C2',
+				'linkUri' => 'http://www.google.com',
+				'area' => $area,
 			];
 			
 // 			$action = [
@@ -31,18 +44,29 @@ if (!is_null($events['events'])) {
 // 				'label' => 'Yes',
 // 				'text' => 'yes',
 // 			];
+			
+			$baseSize = [
+				'height' => '1040'
+				'width' => '1040'
+			];
+			
 			$template = [
 				'type' => 'confirm',
 				'text' => 'Please select',
-				'actions' => [$action],
+				
+				
 			];
 			
 			
 			// Build message to reply back
 			$messages = [
-				'type' => 'template',
+				'type' => 'imagemap',
+				'baseUrl' => 'https://assets.ifttt.com/images/channels/8/icons/large.png',
 				'altText' => 'this is a buttons template',
-				'template' => $template,
+				'baseSize' => $baseSize,
+				'actions' => [$action],
+				
+// 				'template' => $template,
 // 				'packageId' => '1',
 // 				'stickerId' => '1',
 	
@@ -70,4 +94,4 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "OK445";
+echo "OK5";
