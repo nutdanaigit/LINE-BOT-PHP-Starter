@@ -34,9 +34,11 @@ if (!is_null($events['events'])) {
 			
 			// Build message to reply back
 			$messages = [
-				'type' => 'template',
-				'altText' => 'this is a buttons template',
-				'template' => $template,
+				'type' => 'sticker',
+// 				'altText' => 'this is a buttons template',
+// 				'template' => $template,
+				'packageId' => '1',
+				'stickerId' => '1',
 	
 			];
 
