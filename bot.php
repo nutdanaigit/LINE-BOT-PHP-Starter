@@ -18,7 +18,7 @@ if (!is_null($events['events'])) {
 			$action = [
 				'type' => 'uri',
 				'label' => 'View detail',
-				'uri' => 'tel:027777777,0,,#,2,1,2'
+				'uri' => 'tel:027777777,0,,#,2,1,2',
 			];
 			$template = [
 				'type' => 'buttons',
@@ -32,7 +32,7 @@ if (!is_null($events['events'])) {
 			$messages = [
 				'type' => 'template',
 				'altText' => 'this is a buttons template',
-				'template' => $template
+				'template' => $template,
 	
 			];
 
@@ -58,4 +58,4 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "OK2";
+echo "OK3";
