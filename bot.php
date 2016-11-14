@@ -6,7 +6,7 @@ $content = file_get_contents('php://input');
 // Parse JSON
 $events = json_decode($content, true);
 
-$arrayInformation = array('web','Web','information','Information','ขอข้อมูล','ข้อมูล','สอบถามขอมูลเพิ่มเติม');
+$arrayInformation = array('web','Web','information','Information','ขอข้อมูล','ข้อมูล','สอบถามข้อมูลเพิ่มเติม');
 $arrayPhone = array('May i have numberphone please?','phone','Phone','phone please','Phone Please','เบอร์','ขอเบอร์','ขอเบอร์หน่อย','ติดต่อพนักงาน','โทร','หมายเลข','เบอร์โทร','ขอเบอร์โทร','ขอเบอร์โทรครับ','ขอบเบอร์โทรค่ะ','เบอร์โทรครับ');
 
 // Validate parsed JSON data
@@ -33,7 +33,7 @@ if (!is_null($events['events'])) {
 				];
 				$messages = [
 					'type' => 'template',
-					'altTest' => 'this is a confirm template',
+					'altText' => 'this is a confirm template',
 					'template' => $template,
 				];
 			}
@@ -104,4 +104,4 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "OK45";
+echo "OK47";
