@@ -47,8 +47,8 @@ if (!is_null($events['events'])) {
  				];
 				
 				$areaTwo = [
-					'x' => 460,
-					'y' => 0,
+					'x' => 0,
+					'y' => 300,
 					'width' => 460,
 					'height' => 300,
  				];
@@ -58,7 +58,7 @@ if (!is_null($events['events'])) {
 					'area' => $area,
 				];
 				$actionTwo =[
-					'type' => 'message',
+					'type' => 'text',
 					'text' => 'Click To WebSite',
 					'area' => $areaTwo,
 					];
@@ -113,4 +113,4 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "OK4887";
+echo "OK87";
