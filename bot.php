@@ -61,7 +61,7 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			$messages = [
 				'type' => 'imagemap',
-				'baseUrl' => 'https://raw.githubusercontent.com/nutdanaigit/LINE-BOT-PHP-Starter/master',
+				'baseUrl' => 'https://raw.githubusercontent.com/nutdanaigit/LINE-BOT-PHP-Starter/master/300.png',
 				'altText' => 'this is a buttons template',
 				'baseSize' => $baseSize,
 				'actions' => [$action],
@@ -94,4 +94,4 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "OK3245";
+echo "OK35";
