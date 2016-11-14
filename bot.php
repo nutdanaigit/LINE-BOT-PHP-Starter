@@ -50,7 +50,7 @@ if (!is_null($events['events'])) {
 					'x' => 0,
 					'y' => 300,
 					'width' => 460,
-					'height' => 300,
+					'height' => 100,
  				];
 				$action = [
 					'type' => 'uri',
@@ -113,4 +113,4 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "OK87";
+echo "OK847";
