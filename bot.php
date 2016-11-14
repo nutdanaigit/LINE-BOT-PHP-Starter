@@ -36,9 +36,7 @@ if (!is_null($events['events'])) {
 					'altText' => 'this is a confirm template',
 					'template' => $template,
 				];
-			}
-			
-			if(in_array($event['message']['text'] ,$arrayInformation)){
+			}else if(in_array($event['message']['text'] ,$arrayInformation)){
 				$area = [
 					'x' => 0,
 					'y' => 0,
@@ -67,8 +65,12 @@ if (!is_null($events['events'])) {
 	// 				'stickerId' => '1',
 	
 				];
+			}else{
+				$messages = [
+					'type' => 'text',
+					'text' => 'ขออภัยครับ ท่านใส่รายการไม่ถูกต้อง T T'
+				];
 			}
-			
 			
 // 			$action = [
 // 				'type' => 'message',
