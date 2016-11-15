@@ -39,7 +39,7 @@ $arrayInformation = array('Information','information','ขอข้อมูล'
 					'width' => 460
 				];
 				// Build message to reply back
-				return $messages = [
+				$messages = [
 					'type' => 'imagemap',
 					'baseUrl' => 'https://raw.githubusercontent.com/nutdanaigit/LINE-BOT-PHP-Starter/master',
 					'altText' => 'this is a buttons template',
@@ -75,7 +75,7 @@ if (!is_null($events['events'])) {
 					'template' => $template
 				];
 			}else if(in_array($event['message']['text'] ,$arrayWebInformation)){
-					$message = ['message' => $ImageMap()];
+					$message = ['messages' => $ImageMap()];
 				
 			}else if(in_array($event['message']['text'] ,$arrayInformation)){
 				$messages = [
@@ -86,7 +86,7 @@ if (!is_null($events['events'])) {
 				];
 			}else if(in_array($event['message']['text'],'Click To WebSite' )){
 				// Do in the future.
-					$message = ['message' => $ImageMap()];
+					$message => $ImageMap();
 			}else{
 				$messages = [
 					'type' => 'text',
