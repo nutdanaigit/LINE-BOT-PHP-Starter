@@ -22,13 +22,13 @@ if (!is_null($events['events'])) {
 			$text = $event['message']['text'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
-		if(in_array($event['message']['text'],$arraySticker )){	
+		if(in_array($event['message']['text'],$arraySticker || $event['message']['sticker'])){	
 			$messages = [
 				'type' => 'sticker',
 				'packageId'=>'4',
 				'stickerId' => '629',
 				];
-		}else if(in_array($event['message']['text'] ,$arrayPhone) || $event['message']['sticker']){
+		}else if(in_array($event['message']['text'] ,$arrayPhone)){
 				$action = [
 					'type' => 'uri',
 					'label' => 'Call',
