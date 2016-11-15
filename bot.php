@@ -32,13 +32,11 @@ if (!is_null($events['events'])) {
 		}else if(in_array($event['message']['text'],$arrayLocation)){
 			$messages = [
 				'type' => 'location',
-				'title'=>'My Location',
-				'address' => 'SCB. Park Plaza, อาคาร ไทย พาณิชย์ ปาร์ค พลาซ่า ถนน รัชดาภิเษก จตุจักร กรุงเทพมหานคร 10900, Bangkok 10900',
+				'title'=>'my Location',
+				'address' => 'SCB Park Plaza',
 				'latitude'=>'13.8269871',
-				'longitude'=>'100.5640887'
+				'longitude'=> '100.5640887'
 				];
-		
-		
 		}else if(in_array($event['message']['text'] ,$arrayPhone)){
 				$action = [
 					'type' => 'uri',
