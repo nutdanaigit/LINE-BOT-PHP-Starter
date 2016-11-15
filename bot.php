@@ -22,7 +22,7 @@ if (!is_null($events['events'])) {
 			$text = $event['message']['text'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
-		if(in_array($event['message']['text'],$arraySticker)|| $event['message']['sticker']){	
+		if(in_array($event['message']['text'],$arraySticker)|| $event['message']['type']=='sticker'){	
 			$messages = [
 				'type' => 'sticker',
 				'packageId'=>'4',
@@ -126,5 +126,5 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "OK63";
+echo "OK633";
 ?>
