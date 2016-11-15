@@ -10,8 +10,36 @@ $arrayWebInformation = array('1','web','Web','เว็บ','เว็บไซ�
 $arrayPhone = array('2','May i have numberphone please?','phone','Phone','phone please','Phone Please','เบอร์','ขอเบอร์','ขอเบอร์หน่อย','ติดต่อพนักงาน','โทร','หมายเลข','เบอร์โทร','ขอเบอร์โทร','ขอเบอร์โทรครับ','ขอบเบอร์โทรค่ะ','เบอร์โทรครับ');
 $arrayInformation = array('Information','information','ขอข้อมูล','ข้อมูล','สอบถามข้อมูลเพิ่มเติม','รายละเอียด','#');
 
-		function ImageMap(){
-				$area = [
+		
+// Validate parsed JSON data
+if (!is_null($events['events'])) {
+	// Loop through each event
+	foreach ($events['events'] as $event) {
+		// Reply only when message sent is in 'text' format
+		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
+			// Get text sent
+			$text = $event['message']['text'];
+			// Get replyToken
+			$replyToken = $event['replyToken'];
+			
+			if(in_array($event['message']['text'] ,$arrayPhone)){
+				$action = [
+					'type' => 'uri',
+					'label' => 'Call',
+					'uri' => 'tel:027777777%2C0%2C%2C%23%2C2%2C1%2C2',
+				];
+				$template = [
+					'type' => 'confirm',
+					'text' => 'Please select',
+					'actions' => [$action]
+				];
+				$messages = [
+					'type' => 'template',
+					'altText' => 'this is a confirm template',
+					'template' => $template
+				];
+			}else if(in_array($event['message']['text'] ,$arrayWebInformation)){
+					$area = [
 					'x' => 0,
 					'y' => 0,
 					'width' => 460,
@@ -46,36 +74,6 @@ $arrayInformation = array('Information','information','ขอข้อมูล'
 					'baseSize' => $baseSize,
 					'actions' => [$action,$actionTwo]
 				];
-			}
-// Validate parsed JSON data
-if (!is_null($events['events'])) {
-	// Loop through each event
-	foreach ($events['events'] as $event) {
-		// Reply only when message sent is in 'text' format
-		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
-			// Get text sent
-			$text = $event['message']['text'];
-			// Get replyToken
-			$replyToken = $event['replyToken'];
-			
-			if(in_array($event['message']['text'] ,$arrayPhone)){
-				$action = [
-					'type' => 'uri',
-					'label' => 'Call',
-					'uri' => 'tel:027777777%2C0%2C%2C%23%2C2%2C1%2C2',
-				];
-				$template = [
-					'type' => 'confirm',
-					'text' => 'Please select',
-					'actions' => [$action]
-				];
-				$messages = [
-					'type' => 'template',
-					'altText' => 'this is a confirm template',
-					'template' => $template
-				];
-			}else if(in_array($event['message']['text'] ,$arrayWebInformation)){
-					$message = ['messages' => $ImageMap()];
 				
 			}else if(in_array($event['message']['text'] ,$arrayInformation)){
 				$messages = [
@@ -86,7 +84,10 @@ if (!is_null($events['events'])) {
 				];
 			}else if(in_array($event['message']['text'],'Click To WebSite' )){
 				// Do in the future.
-					$message => $ImageMap();
+				$messages = [
+					'type' => 'text',
+					'text' => ' Please Click to image '
+				];
 			}else{
 				$messages = [
 					'type' => 'text',
