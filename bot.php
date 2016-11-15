@@ -22,7 +22,7 @@ if (!is_null($events['events'])) {
 			$text = $event['message']['text'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
-		if(in_array($event['message']['text'],$arraySticker || $event['message']['type']=='sticker')){	
+		if(in_array($event['message']['text'],$arraySticker)|| $event['message']['sticker']){	
 			$messages = [
 				'type' => 'sticker',
 				'packageId'=>'4',
@@ -97,7 +97,7 @@ if (!is_null($events['events'])) {
 			}else{
 				$messages = [
 					'type' => 'text',
-					'text' => 'ท่านใส่รายการไม่ถูกต้องค่ะ T T  
+					'text' => 'ท่านใส่รายการไม่ถูกต้องค่ะTT
 :: กรุณาพิมพ์ "#" หรือ "รายละเอียด" เพื่อดูรายการค่ะ '
 				];
 			}
