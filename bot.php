@@ -9,6 +9,7 @@ $events = json_decode($content, true);
 $arrayWebInformation = array('1','web','Web','เว็บ','เว็บไซต์');
 $arrayPhone = array('2','May i have numberphone please?','phone','Phone','phone please','Phone Please','เบอร์','ขอเบอร์','ขอเบอร์หน่อย','ติดต่อพนักงาน','โทร','หมายเลข','เบอร์โทร','ขอเบอร์โทร','ขอเบอร์โทรครับ','ขอบเบอร์โทรค่ะ','เบอร์โทรครับ');
 $arrayInformation = array('Information','information','ขอข้อมูล','ข้อมูล','สอบถามข้อมูลเพิ่มเติม','รายละเอียด','#');
+$arraySticker = array('sticker','Sticker','สติ๊กเกอร์','ขอสติ๊กเกอร์','ขอติ๊กเกอร์','ติ๊กเกอร์');
 
 		
 // Validate parsed JSON data
@@ -21,8 +22,13 @@ if (!is_null($events['events'])) {
 			$text = $event['message']['text'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
-			
-			if(in_array($event['message']['text'] ,$arrayPhone)){
+		if(in_array($event['message']['text'],$arraySticker )){	
+			$message = [
+				'type' => 'sticker',
+				'packageId'=>'4',
+				'stickerId' => '629',
+				];
+		}else if(in_array($event['message']['text'] ,$arrayPhone)){
 				$action = [
 					'type' => 'uri',
 					'label' => 'Call',
@@ -120,5 +126,5 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "OK3";
+echo "OK67";
 ?>
