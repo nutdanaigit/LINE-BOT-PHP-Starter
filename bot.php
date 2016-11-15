@@ -75,7 +75,7 @@ if (!is_null($events['events'])) {
 					'actions' => [$action,$actionTwo]
 				];
 				
-			}else if(($event['message']['text'] ,$arrayInformation)){
+			}else if(in_array($event['message']['text'] ,$arrayInformation)){
 				$messages = [
 					'type' => 'text',
 					'text' => ' รายการ
@@ -117,4 +117,4 @@ if (!is_null($events['events'])) {
 	}
 }
 echo "OK24";
-
+?>
