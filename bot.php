@@ -23,7 +23,7 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 		if(in_array($event['message']['text'],$arraySticker )){	
-			$message = [
+			$messages = [
 				'type' => 'sticker',
 				'packageId'=>'4',
 				'stickerId' => '629',
