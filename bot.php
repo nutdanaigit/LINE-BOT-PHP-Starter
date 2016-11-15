@@ -10,7 +10,7 @@ $arrayWebInformation = array('1','web','Web','เว็บ','เว็บไซ�
 $arrayPhone = array('2','May i have numberphone please?','phone','Phone','phone please','Phone Please','เบอร์','ขอเบอร์','ขอเบอร์หน่อย','ติดต่อพนักงาน','โทร','หมายเลข','เบอร์โทร','ขอเบอร์โทร','ขอเบอร์โทรครับ','ขอบเบอร์โทรค่ะ','เบอร์โทรครับ');
 $arrayInformation = array('Information','information','ขอข้อมูล','ข้อมูล','สอบถามข้อมูลเพิ่มเติม','รายละเอียด','#');
 
-function ImageMap(){
+		function ImageMap(){
 				$area = [
 					'x' => 0,
 					'y' => 0,
@@ -46,7 +46,7 @@ function ImageMap(){
 					'baseSize' => $baseSize,
 					'actions' => [$action,$actionTwo]
 				];
-}
+			}
 // Validate parsed JSON data
 if (!is_null($events['events'])) {
 	// Loop through each event
@@ -76,6 +76,10 @@ if (!is_null($events['events'])) {
 				];
 			}else if(in_array($event['message']['text'] ,$arrayWebInformation)){
 				ImageMap();
+				$messages = [
+					'type' => 'text',
+					'text' => ' TestCheck ArrayWeb '
+				];
 				
 			}else if(in_array($event['message']['text'] ,$arrayInformation)){
 				$messages = [
@@ -87,6 +91,10 @@ if (!is_null($events['events'])) {
 			}else if(in_array($event['message']['text'],'Click To WebSite' )){
 				// Do in the future.
 				ImageMap();
+				$messages = [
+					'type' => 'text',
+					'text' => ' TestCheck Click to Website '
+				];
 			}else{
 				$messages = [
 					'type' => 'text',
@@ -119,5 +127,5 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "OK324";
+echo "OK3";
 ?>
