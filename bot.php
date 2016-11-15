@@ -76,7 +76,7 @@ if (!is_null($events['events'])) {
 					'template' => $template
 				];
 			}else if(in_array($event['message']['text'] ,$arrayWebInformation)){
-					ImageMap();
+					$ImageMap();
 				
 			}else if(in_array($event['message']['text'] ,$arrayInformation)){
 				$messages = [
@@ -87,7 +87,7 @@ if (!is_null($events['events'])) {
 				];
 			}else if(in_array($event['message']['text'],'Click To WebSite' )){
 				// Do in the future.
-					ImageMap();
+					$ImageMap();
 			}else{
 				$messages = [
 					'type' => 'text',
@@ -120,5 +120,5 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "OK34";
+echo "OK334";
 ?>
