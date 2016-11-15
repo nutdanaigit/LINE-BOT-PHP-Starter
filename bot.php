@@ -46,7 +46,6 @@ $arrayInformation = array('Information','information','ขอข้อมูล'
 					'baseSize' => $baseSize,
 					'actions' => [$action,$actionTwo]
 				];
-				return $messages;
 			}
 // Validate parsed JSON data
 if (!is_null($events['events'])) {
@@ -120,5 +119,5 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "OK334";
+echo "OK3";
 ?>
