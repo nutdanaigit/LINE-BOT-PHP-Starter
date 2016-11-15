@@ -22,7 +22,7 @@ if (!is_null($events['events'])) {
 			$text = $event['message']['text'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
-		if(in_array($event['message']['text'],$arraySticker || $event['message']['sticker'])){	
+		if(in_array($event['message']['text'],$arraySticker || $event['message']['type']=='sticker')){	
 			$messages = [
 				'type' => 'sticker',
 				'packageId'=>'4',
@@ -85,8 +85,8 @@ if (!is_null($events['events'])) {
 				$messages = [
 					'type' => 'text',
 					'text' => ' รายการ
---> พิมพ์ 1 หรือ web หรือ เว็บ เพื่อเข้าดูข้อมูลที่เว็ปไซต์ค่ะ  
---> พิมพ์ 2 หรือ phone หรือ เบอร์ เพื่อโทรออกค่ะ '
+:: พิมพ์ 1 หรือ web หรือ เว็บ เพื่อเข้าดูข้อมูลที่เว็ปไซต์ค่ะ  
+:: พิมพ์ 2 หรือ phone หรือ เบอร์ เพื่อโทรออกค่ะ '
 				];
 			}else if(in_array($event['message']['text'],'Click To WebSite' )){
 				// Do in the future.
@@ -97,8 +97,8 @@ if (!is_null($events['events'])) {
 			}else{
 				$messages = [
 					'type' => 'text',
-					'text' => 'ขออภัยครับ ท่านใส่รายการไม่ถูกต้อง T T  
---> กรุณาพิมพ์ "#" หรือ "รายละเอียด" เพื่อดูรายการค่ะ '
+					'text' => 'ท่านใส่รายการไม่ถูกต้องค่ะ T T  
+:: กรุณาพิมพ์ "#" หรือ "รายละเอียด" เพื่อดูรายการค่ะ '
 				];
 			}
 
@@ -126,5 +126,5 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "OK637";
+echo "OK63";
 ?>
