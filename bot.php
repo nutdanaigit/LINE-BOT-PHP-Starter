@@ -31,40 +31,40 @@ if (!is_null($events['events'])) {
 				$template = [
 					'type' => 'confirm',
 					'text' => 'Please select',
-					'actions' => [$action],
+					'actions' => [$action]
 				];
 				$messages = [
 					'type' => 'template',
 					'altText' => 'this is a confirm template',
-					'template' => $template,
+					'template' => $template
 				];
 			}else if(in_array($event['message']['text'] ,$arrayWebInformation)){
 				$area = [
 					'x' => 0,
 					'y' => 0,
 					'width' => 460,
-					'height' => 300,
+					'height' => 300
  				];
 				
 				$areaTwo = [
 					'x' => 0,
 					'y' => 300,
 					'width' => 460,
-					'height' => 100,
+					'height' => 100
  				];
 				$action = [
 					'type' => 'uri',
 					'linkUri' => 'http://scbhelp.mybluemix.net',
-					'area' => $area,
+					'area' => $area
 				];
 				$actionTwo =[
 					'type' => 'message',
 					'text' => 'Click To WebSite',
-					'area' => $areaTwo,
+					'area' => $areaTwo
 					];
 				$baseSize = [
 					'height' => 460,
-					'width' => 460,
+					'width' => 460
 				];
 				// Build message to reply back
 				$messages = [
@@ -72,7 +72,7 @@ if (!is_null($events['events'])) {
 					'baseUrl' => 'https://raw.githubusercontent.com/nutdanaigit/LINE-BOT-PHP-Starter/master',
 					'altText' => 'this is a buttons template',
 					'baseSize' => $baseSize,
-					'actions' => [$action,$actionTwo],
+					'actions' => [$action,$actionTwo]
 				];
 				
 			}else if(($event['message']['text'] ,$arrayInformation)){
@@ -80,7 +80,7 @@ if (!is_null($events['events'])) {
 					'type' => 'text',
 					'text' => ' รายการ
 --> พิมพ์ 1 หรือ web หรือ เว็บ เพื่อเข้าดูข้อมูลที่เว็ปไซต์ค่ะ  
---> พิมพ์ 2 หรือ phone หรือ เบอร์ เพื่อโทรออกค่ะ ',
+--> พิมพ์ 2 หรือ phone หรือ เบอร์ เพื่อโทรออกค่ะ '
 				];
 			}else if(in_array($event['message']['text'],'Click To WebSite' )){
 				// Do in the future.
@@ -88,7 +88,7 @@ if (!is_null($events['events'])) {
 				$messages = [
 					'type' => 'text',
 					'text' => 'ขออภัยครับ ท่านใส่รายการไม่ถูกต้อง T T  
---> กรุณาพิมพ์ "#" หรือ "รายละเอียด" เพื่อดูรายการค่ะ ',
+--> กรุณาพิมพ์ "#" หรือ "รายละเอียด" เพื่อดูรายการค่ะ '
 				];
 			}
 
@@ -97,7 +97,7 @@ if (!is_null($events['events'])) {
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
 				'replyToken' => $replyToken,
-				'messages' => [$messages],
+				'messages' => [$messages]
 			];
 			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
@@ -116,5 +116,5 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "OK2";
-?>
+echo "OK24";
+
