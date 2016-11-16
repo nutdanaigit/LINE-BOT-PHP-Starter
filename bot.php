@@ -26,11 +26,26 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 			$useid = $event['source']['userId'];
+			
 		if(in_array($event['message']['text'],$arrayWhatMyName)){
+			$url = 'https://api.line.me/v2/bot/profile/'.$useid;
+			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+			
+			$ch = curl_init($url);
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+			$result = curl_exec($ch);
+			curl_close($ch);
+			
+			$obj = json_decode($result);
+			$name = $obj->{'displayName'};
+			
 			$messages = [
 				'type' => 'text',
-				'text' => "สวัสดีคุณ".$useid
+				'text' => "สวัสดีคุณ".$name."ขณะนี้เวลา " . date("h:i:sa")
 			];	
+			
 		}else if(in_array($event['message']['text'],$arraySticker)|| $event['message']['type']=='sticker'){	
 			$messages = [
 				'type' => 'sticker',
@@ -144,5 +159,5 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "OK3";
+echo "OK13";
 ?>
