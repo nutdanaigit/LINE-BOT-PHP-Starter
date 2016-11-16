@@ -11,6 +11,7 @@ $arrayPhone = array('2','May i have numberphone please?','phone','Phone','phone 
 $arrayLocation = array('3','location','Location','ขอที่อยู่','ที่อยู่','ตำแหน่ง','ขอตำแหน่ง');
 $arrayInformation = array('Information','information','ขอข้อมูล','ข้อมูล','สอบถามข้อมูลเพิ่มเติม','รายละเอียด','#');
 $arraySticker = array('sticker','Sticker','สติ๊กเกอร์','ขอสติ๊กเกอร์','ขอติ๊กเกอร์','ติ๊กเกอร์');
+$arrayWhatMyName = array('ผมชื่ออะไร','ชื่อ','name','Name','ชื่อผมอะไร');
 
 
 		
@@ -24,7 +25,13 @@ if (!is_null($events['events'])) {
 			$text = $event['message']['text'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
-		if(in_array($event['message']['text'],$arraySticker)|| $event['message']['type']=='sticker'){	
+			$useid = $event['source']['userId'];
+		if(in_array($event['message']['text'],$arrayWhatMyName)){
+			$messages = [
+				'type' => 'text',
+				'text' => "สวัสดีคุณ".$useid
+			];	
+		}else if(in_array($event['message']['text'],$arraySticker)|| $event['message']['type']=='sticker'){	
 			$messages = [
 				'type' => 'sticker',
 				'packageId'=>'4',
@@ -137,5 +144,5 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "OK633";
+echo "OK3";
 ?>
