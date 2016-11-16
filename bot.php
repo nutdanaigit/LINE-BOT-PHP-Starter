@@ -43,7 +43,7 @@ if (!is_null($events['events'])) {
 			
 			$messages = [
 				'type' => 'text',
-				'text' => "สวัสดีคุณ".$name."ขณะนี้เวลา " . date("h:i:sa")
+				'text' => "สวัสดีคุณ ".$name." ขณะนี้เวลา " . date("h:i:sa")
 			];	
 			
 		}else if(in_array($event['message']['text'],$arraySticker)|| $event['message']['type']=='sticker'){	
@@ -116,10 +116,10 @@ if (!is_null($events['events'])) {
 			}else if(in_array($event['message']['text'] ,$arrayInformation)){
 				$messages = [
 					'type' => 'text',
-					'text' => ' รายการ
-:: พิมพ์ 1 หรือ web หรือ เว็บ เพื่อเข้าดูข้อมูลที่เว็ปไซต์ค่ะ  
-:: พิมพ์ 2 หรือ phone หรือ เบอร์ เพื่อโทรออกค่ะ 
-:: พิมพ์ 3 หรือ location หรือ ตำแหน่ง เพื่อต้องการทราบที่อยู่เราค่ะ'
+					'text' => " รายการ\n
+:: พิมพ์ 1 หรือ web หรือ เว็บ เพื่อเข้าดูข้อมูลที่เว็ปไซต์ค่ะ\n  
+:: พิมพ์ 2 หรือ phone หรือ เบอร์ เพื่อโทรออกค่ะ\n 
+:: พิมพ์ 3 หรือ location หรือ ตำแหน่ง เพื่อต้องการทราบที่อยู่เราค่ะ"
 				];
 			}else if(in_array($event['message']['text'],'Click To WebSite' )){
 				// Do in the future.
@@ -159,5 +159,5 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "OK13";
+echo "OK3";
 ?>
