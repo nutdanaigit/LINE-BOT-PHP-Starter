@@ -92,7 +92,7 @@ if (!is_null($events['events'])) {
  				];
 				$action = [
 					'type' => 'uri',
-					'linkUri' => 'http://scbhelp.mybluemix.net',
+					'linkUri' => 'https://linedev.digitalten.xyz',
 					'area' => $area
 				];
 				$actionTwo =[
